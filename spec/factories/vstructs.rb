@@ -1,13 +1,14 @@
 # == Schema Information
 #
-# Table name: partners
+# Table name: vstructs
 #
-#  id           :uuid             not null, primary key
-#  code         :string(255)      not null
-#  name         :string(255)
-#  lock_version :integer          default(0), not null
-#  created_at   :datetime
-#  updated_at   :datetime
+#  id                 :uuid             not null, primary key
+#  label              :string(255)
+#  streaming_fname    :string(255)
+#  digitization_notes :text
+#  status             :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
 #
 
 FactoryGirl.define do

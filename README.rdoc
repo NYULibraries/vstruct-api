@@ -1,4 +1,0 @@
-== README
-
-* This is a spike to explore video structural metadata approaches.
-* Ruby 2.0 / Rails 4.0.2
