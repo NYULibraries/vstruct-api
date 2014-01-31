@@ -1,0 +1,33 @@
+<h1>Listing vstructs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Streaming fname</th>
+      <th>Digitization notes</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vstructs.each do |vstruct| %>
+      <tr>
+        <td><%= vstruct.label %></td>
+        <td><%= vstruct.streaming_fname %></td>
+        <td><%= vstruct.digitization_notes %></td>
+        <td><%= vstruct.status %></td>
+        <td><%= link_to 'Show', vstruct %></td>
+        <td><%= link_to 'Edit', edit_vstruct_path(vstruct) %></td>
+        <td><%= link_to 'Destroy', vstruct, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vstruct', new_vstruct_path %>
