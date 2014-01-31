@@ -54,5 +54,4 @@ production:
   encoding: unicode
   database: vstruct_production
   pool: 5
-  username: vstruct
   password:
