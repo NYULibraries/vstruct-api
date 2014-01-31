@@ -44,6 +44,8 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'rspec-rails', group: [:development, :test]
+
 # HEROKU mods
 gem 'rails_12factor', group: :production
 ruby "2.0.0"
