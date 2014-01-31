@@ -1,4 +1,12 @@
 VstructApi::Application.routes.draw do
+
+  namespace :api, defaults: {format: 'json'} do
+    # /api/... Api::
+    namespace :v0 do
+      resources :vstructs
+    end
+  end
+
   resources :vstructs
 
   # The priority is based upon order of creation: first created -> highest priority.
