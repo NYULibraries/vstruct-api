@@ -46,6 +46,7 @@ end
 
 gem 'rspec-rails', group: [:development, :test]
 gem 'annotate', group: :development
+gem 'factory_girl_rails', group: [:development, :test]
 
 # HEROKU mods
 gem 'rails_12factor', group: :production
