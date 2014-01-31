@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Vstruct::Application.load_tasks
+VstructApi::Application.load_tasks
