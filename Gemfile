@@ -45,6 +45,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'rspec-rails', group: [:development, :test]
+gem 'annotate', group: :development
 
 # HEROKU mods
 gem 'rails_12factor', group: :production
