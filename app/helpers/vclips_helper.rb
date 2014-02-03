@@ -1,0 +1,2 @@
+module VclipsHelper
+end

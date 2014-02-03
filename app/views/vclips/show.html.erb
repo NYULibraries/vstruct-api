@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vstruct:</strong>
+  <%= @vclip.vstruct_id %>
+</p>
+
+<p>
+  <strong>Time in:</strong>
+  <%= @vclip.time_in %>
+</p>
+
+<p>
+  <strong>Time out:</strong>
+  <%= @vclip.time_out %>
+</p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @vclip.label %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @vclip.type %>
+</p>
+
+<p>
+  <strong>Clip order:</strong>
+  <%= @vclip.clip_order %>
+</p>
+
+<p>
+  <strong>Lock version:</strong>
+  <%= @vclip.lock_version %>
+</p>
+
+<%= link_to 'Edit', edit_vclip_path(@vclip) %> |
+<%= link_to 'Back', vclips_path %>

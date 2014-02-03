@@ -1,0 +1,45 @@
+<%= form_for(@vclip) do |f| %>
+  <% if @vclip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vclip.errors.count, "error") %> prohibited this vclip from being saved:</h2>
+
+      <ul>
+      <% @vclip.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :vstruct_id %><br>
+    <%= f.text_field :vstruct_id %>
+  </div>
+  <div class="field">
+    <%= f.label :time_in %><br>
+    <%= f.time_select :time_in %>
+  </div>
+  <div class="field">
+    <%= f.label :time_out %><br>
+    <%= f.time_select :time_out %>
+  </div>
+  <div class="field">
+    <%= f.label :label %><br>
+    <%= f.text_field :label %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :clip_order %><br>
+    <%= f.number_field :clip_order %>
+  </div>
+  <div class="field">
+    <%= f.label :lock_version %><br>
+    <%= f.number_field :lock_version %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

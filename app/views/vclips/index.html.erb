@@ -1,0 +1,39 @@
+<h1>Listing vclips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vstruct</th>
+      <th>Time in</th>
+      <th>Time out</th>
+      <th>Label</th>
+      <th>Type</th>
+      <th>Clip order</th>
+      <th>Lock version</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vclips.each do |vclip| %>
+      <tr>
+        <td><%= vclip.vstruct_id %></td>
+        <td><%= vclip.time_in %></td>
+        <td><%= vclip.time_out %></td>
+        <td><%= vclip.label %></td>
+        <td><%= vclip.type %></td>
+        <td><%= vclip.clip_order %></td>
+        <td><%= vclip.lock_version %></td>
+        <td><%= link_to 'Show', vclip %></td>
+        <td><%= link_to 'Edit', edit_vclip_path(vclip) %></td>
+        <td><%= link_to 'Destroy', vclip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vclip', new_vclip_path %>

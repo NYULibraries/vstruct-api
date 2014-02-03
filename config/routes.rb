@@ -1,5 +1,7 @@
 VstructApi::Application.routes.draw do
 
+  resources :vclips
+
   namespace :api, defaults: {format: 'json'} do
     # /api/... Api::
     namespace :v0 do
