@@ -4,8 +4,8 @@
 #
 #  id           :uuid             not null, primary key
 #  vstruct_id   :uuid
-#  time_in      :time
-#  time_out     :time
+#  time_in      :string(255)
+#  time_out     :string(255)
 #  label        :string(255)
 #  clip_type    :string(255)
 #  clip_order   :integer
