@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140203200435) do
+ActiveRecord::Schema.define(version: 20140204230724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 20140203200435) do
 
   create_table "vclips", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.uuid     "vstruct_id"
-    t.time     "time_in"
-    t.time     "time_out"
+    t.string   "time_in"
+    t.string   "time_out"
     t.string   "label"
-    t.string   "type"
+    t.string   "clip_type"
     t.integer  "clip_order"
     t.integer  "lock_version"
     t.datetime "created_at"

@@ -2,9 +2,6 @@ module Api
   module V0
     class VstructsController < ApplicationController
 
-      rescue_from ActiveRecord::RecordNotFound,   with: :rescue_record_not_found
-      rescue_from PG::InvalidTextRepresentation,  with: :rescue_bad_request
-
       respond_to :json
       before_action :set_vstruct, only: [:show, :update, :destroy]
 
@@ -46,13 +43,6 @@ module Api
         params.require(:vstruct).permit(:id, :label, :streaming_fname, :digitization_notes, :status)
       end
 
-      def rescue_record_not_found(error)
-        render :json => { :error => error.message }, :status => :not_found
-      end
-
-      def rescue_bad_request(error)
-        render :json => { :error => error.message.strip }, :status => :bad_request
-      end
     end
   end
 end
