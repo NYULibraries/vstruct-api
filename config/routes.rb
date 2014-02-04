@@ -9,9 +9,10 @@ VstructApi::Application.routes.draw do
     end
   end
 
-  resources :vstructs, shallow: true do
-    resources :vclips
-  end
+  # resources :vstructs, shallow: true do
+  #   resources :vclips
+  # end
 
-  root 'vstructs#index'
+  #root 'vstructs#index'
+  root 'api/v0/vstructs#index', defaults: {format: 'json'}
 end

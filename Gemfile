@@ -44,9 +44,14 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'rspec-rails', group: [:development, :test]
-gem 'annotate', group: :development
-gem 'factory_girl_rails', group: [:development, :test]
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'annotate'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+end
+
+gem 'validates_timeliness', '~> 3.0'
 
 # HEROKU mods
 gem 'rails_12factor', group: :production

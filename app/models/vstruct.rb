@@ -12,4 +12,5 @@
 #
 
 class Vstruct < ActiveRecord::Base
+  has_many :vclips
 end
