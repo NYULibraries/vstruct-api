@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204230724) do
+ActiveRecord::Schema.define(version: 20140205173334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,10 +24,12 @@ ActiveRecord::Schema.define(version: 20140204230724) do
     t.string   "label"
     t.string   "clip_type"
     t.integer  "clip_order"
-    t.integer  "lock_version"
+    t.integer  "lock_version", default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "vclips", ["vstruct_id"], name: "index_vclips_on_vstruct_id", using: :btree
 
   create_table "vstructs", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "label"
@@ -36,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140204230724) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "lock_version",       default: 0, null: false
   end
 
 end
