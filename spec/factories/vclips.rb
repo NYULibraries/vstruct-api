@@ -9,7 +9,7 @@
 #  label        :string(255)
 #  clip_type    :string(255)
 #  clip_order   :integer
-#  lock_version :integer
+#  lock_version :integer          default(0), not null
 #  created_at   :datetime
 #  updated_at   :datetime
 #

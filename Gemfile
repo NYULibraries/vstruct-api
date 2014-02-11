@@ -52,6 +52,7 @@ group :development, :test do
 end
 
 gem 'validates_timeliness', '~> 3.0'
+gem 'thin'
 
 # HEROKU mods
 gem 'rails_12factor', group: :production
