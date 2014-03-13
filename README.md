@@ -18,7 +18,7 @@ $ heroku config:add HTTP_USER='xxxxxxx' HTTP_PASSWORD='yyyyyyy'
 
     e.g., for **local** deployments:
 ```bash
-$ export SECRET_TOKEN=$(rake secret)
-$ export HTTP_USER='xxxxxxx' 
-$ export HTTP_PASSWORD='yyyyyyy'
+export SECRET_TOKEN=$(rake secret)
+export HTTP_USER='foo' 
+export HTTP_PASSWORD='bar'
 ```

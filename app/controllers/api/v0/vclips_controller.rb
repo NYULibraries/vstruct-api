@@ -48,7 +48,7 @@ module Api
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def vclip_params
-        params.require(:vclip).permit(:id, :vstruct_id, :time_in, :time_out, :label, :type, :clip_order, :lock_version)
+        params.require(:vclip).permit(:id, :vstruct_id, :time_in, :time_out, :label, :clip_type, :clip_order, :lock_version)
       end
     end
   end
