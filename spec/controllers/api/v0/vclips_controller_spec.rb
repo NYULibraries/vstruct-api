@@ -2,7 +2,13 @@ require 'spec_helper'
 
 describe Api::V0::VclipsController do
 
-  let(:valid_attributes) { { "vstruct_id" => "10f92205-25a8-4590-94a9-6ccfa0590545" } }
+  let(:valid_attributes) { { "vstruct_id" => "10f92205-25a8-4590-94a9-6ccfa0590545",
+      "clip_type" => 'clip_type', "time_in" => 'time_in', "time_out" => 'time_out',
+      "label" => 'label',  "clip_order" => 0} }
+
+  let(:changed_attributes) { { "vstruct_id" => "11192205-25a8-4590-94a9-6ccfa0590545",
+      "clip_type" => 'hohoho', "time_in" => 'hehehe', "time_out" => 'hahaha',
+      "label" => 'not-label',  "clip_order" => 1} }
 
   let(:valid_session) { {} }
 
@@ -68,6 +74,17 @@ describe Api::V0::VclipsController do
         vclip = Vclip.create! valid_attributes
         put :update, merge_params({:id => vclip.to_param, :vclip => valid_attributes}), valid_session
         assigns(:vclip).should eq(vclip)
+      end
+
+      it "modified the whitelisted attributes" do
+        vclip = Vclip.create! valid_attributes
+        put :update, merge_params({:id => vclip.to_param, :vclip => changed_attributes}), valid_session
+        assigns(:vclip).vstruct_id.should eq(changed_attributes["vstruct_id"])
+        assigns(:vclip).time_in.should    eq(changed_attributes["time_in"])
+        assigns(:vclip).time_out.should   eq(changed_attributes["time_out"])
+        assigns(:vclip).label.should      eq(changed_attributes["label"])
+        assigns(:vclip).clip_type.should  eq(changed_attributes["clip_type"])
+        assigns(:vclip).clip_order.should eq(changed_attributes["clip_order"])
       end
     end
 
